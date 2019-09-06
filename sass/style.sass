@@ -10,6 +10,7 @@ $line-height: 1.4
 $font-family: "Varela Round"
 $fontFamily2: "Oswald"
 $color: #222
+$color-border: #ececec
 $color-arrow: #1f4ba5
 $color-blue:#1f4ba5
 $wrapper: 1200px
@@ -97,6 +98,30 @@ span
 			margin-top: 0
 			left: -10px
 			visibility: visible 
+	&--right
+		&:hover
+			.dropdawn-content
+				left: auto
+				right: -10px
+		.dropdawn-content
+			&:before
+				right: 30px
+				z-index: 1
+			&:after
+				right: 29px
+	&--white
+		.dropdawn-content
+			background-color: #ffffff
+			border: 1px solid $color-border
+			padding: 0
+			&:before
+				border-bottom-color: #fff
+			&:after
+				content: ""
+				display: block
+				position: absolute
+				bottom: 100%
+				+arr(16, 9, $color-border, t)
 
 .dropdawn-content
 	position: absolute
@@ -108,7 +133,7 @@ span
 	width: 240px
 	opacity: 0
 	margin-top: 30px
-	transition: 0.3s, margin-top 0.4s, left 0.001s
+	transition: opacity 0.4s, margin-top 0.4s
 	&:before
 		content: ""
 		display: block
@@ -117,7 +142,7 @@ span
 		+arr(14, 7, $color, t)
 
 .dropdawn-menu
-	list-style none
+	list-style: none
 	&__item
 		margin-bottom: 8px
 	&:last-child
@@ -179,7 +204,8 @@ span
 		[class*= "icon"]
 			font-size: 16px
 			vertical-align: middle
-
+	.dropdawn-content
+		width: auto
 
 .b-price
 	margin-left: 15px
@@ -209,6 +235,38 @@ span
 	text-align: center
 	padding: 0 4px
 
-	
+.user-menu
+	width: 180px
+	list-style: none
+	&__item
+		border-bottom: 1px solid $color-border
+		&:last-child
+			border-bottom: none	
+	&__link
+		display: flex
+		align-items: center
+		color: $color
+		font-weight: 400
+		font-size: 12px
+		line-height: 40px
+		padding: 0 20px
+		[class*= "icon"]
+			width: 18px
+			text-align: center
+			font-size: 16px
+			color: #ccc
+			margin-right: 15px
+		.badge
+			margin-left: auto
+
+.cart
+	width: 300px
+	&-list
+		list-style: none
+		&__item
+			align-items: center
+			border-bottom: 1px solid $color-border
+			padding: 10px
+			display: flex
 
 
